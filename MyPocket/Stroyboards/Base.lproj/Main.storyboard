@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YVq-wC-5Wy">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bills-->
+        <scene sceneID="BFX-NK-Gjf">
+            <objects>
+                <tableViewController id="NBZ-Ca-pKA" customClass="BillListTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ull-QH-7eX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billsListCell" id="Fud-pX-poX" customClass="BillTableViewCell" customModule="MyPocket" customModuleProvider="target">
+                                <rect key="frame" x="16" y="49.5" width="288" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fud-pX-poX" id="se6-Ab-0HX">
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallet.pass.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hIo-f2-EZm">
+                                            <rect key="frame" x="10" y="8" width="28" height="28"/>
+                                            <color key="tintColor" systemColor="systemGrayColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="Oeq-lL-RSH"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="YwN-AR-lFb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-td-qDl">
+                                            <rect key="frame" x="48" y="8" width="36" height="28"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4mF-td-qDl" firstAttribute="leading" secondItem="hIo-f2-EZm" secondAttribute="trailing" constant="10" id="6Jn-wk-QaG"/>
+                                        <constraint firstItem="hIo-f2-EZm" firstAttribute="top" secondItem="se6-Ab-0HX" secondAttribute="top" constant="8" id="cFe-vZ-fRI"/>
+                                        <constraint firstItem="4mF-td-qDl" firstAttribute="top" secondItem="se6-Ab-0HX" secondAttribute="top" constant="8" id="dZR-9t-2j1"/>
+                                        <constraint firstAttribute="bottom" secondItem="hIo-f2-EZm" secondAttribute="bottom" constant="8" id="jW9-R8-2eP"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4mF-td-qDl" secondAttribute="trailing" constant="204" id="o3y-YA-MKE"/>
+                                        <constraint firstAttribute="bottom" secondItem="4mF-td-qDl" secondAttribute="bottom" constant="8" id="w8m-A8-C75"/>
+                                        <constraint firstItem="hIo-f2-EZm" firstAttribute="leading" secondItem="se6-Ab-0HX" secondAttribute="leading" constant="10" id="yaP-Nc-0uw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="billImage" destination="hIo-f2-EZm" id="9Nk-yM-XJh"/>
+                                    <outlet property="billNameLabel" destination="4mF-td-qDl" id="Q2J-DS-w1Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NBZ-Ca-pKA" id="efB-zJ-0ba"/>
+                            <outlet property="delegate" destination="NBZ-Ca-pKA" id="E2M-ay-kY9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bills" id="2Cx-KU-U03">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3dp-d4-75b">
+                            <connections>
+                                <action selector="newBillListButtonPressed:" destination="NBZ-Ca-pKA" id="Bcq-iE-ztU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-11-MW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="-72"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ybk-eQ-61s">
+            <objects>
+                <navigationController id="YVq-wC-5Wy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Co3-7x-N81">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NBZ-Ca-pKA" kind="relationship" relationship="rootViewController" id="Nfw-Nj-zeu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANt-Hv-bsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-853" y="-71"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

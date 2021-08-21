@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCD26D1181C006F0F7D /* AppDelegate.swift */; };
 		11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCF26D1181C006F0F7D /* SceneDelegate.swift */; };
-		11403FD226D1181C006F0F7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FD126D1181C006F0F7D /* ViewController.swift */; };
 		11403FD526D1181C006F0F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD326D1181C006F0F7D /* Main.storyboard */; };
 		11403FD726D1181D006F0F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD626D1181D006F0F7D /* Assets.xcassets */; };
 		11403FDA26D1181D006F0F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD826D1181D006F0F7D /* LaunchScreen.storyboard */; };
+		11403FE726D118BF006F0F7D /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FE626D118BF006F0F7D /* Bill.swift */; };
+		11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FE826D119E4006F0F7D /* StorageManager.swift */; };
+		11403FEC26D11A27006F0F7D /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */; };
+		11403FEE26D11A43006F0F7D /* BillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FED26D11A43006F0F7D /* BillListTableViewController.swift */; };
+		329AA2C1AEE0211583D029D0 /* Pods_MyPocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11403FCA26D1181C006F0F7D /* MyPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11403FCD26D1181C006F0F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11403FCF26D1181C006F0F7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11403FD126D1181C006F0F7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11403FD426D1181C006F0F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11403FD626D1181D006F0F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11403FD926D1181D006F0F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11403FDB26D1181D006F0F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11403FE626D118BF006F0F7D /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		11403FE826D119E4006F0F7D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		11403FED26D11A43006F0F7D /* BillListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewController.swift; sourceTree = "<group>"; };
+		13846948AA907508A231A3A5 /* Pods-MyPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.release.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.release.xcconfig"; sourceTree = "<group>"; };
+		73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		852067E78632BBC5B094531A /* Pods-MyPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.debug.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329AA2C1AEE0211583D029D0 /* Pods_MyPocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				11403FCC26D1181C006F0F7D /* MyPocket */,
 				11403FCB26D1181C006F0F7D /* Products */,
+				D0EDE3107E5CBF5A94EB0BFB /* Pods */,
+				DD7C6847E445225C6694DA0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +69,83 @@
 		11403FCC26D1181C006F0F7D /* MyPocket */ = {
 			isa = PBXGroup;
 			children = (
-				11403FCD26D1181C006F0F7D /* AppDelegate.swift */,
-				11403FCF26D1181C006F0F7D /* SceneDelegate.swift */,
-				11403FD126D1181C006F0F7D /* ViewController.swift */,
-				11403FD326D1181C006F0F7D /* Main.storyboard */,
-				11403FD626D1181D006F0F7D /* Assets.xcassets */,
-				11403FD826D1181D006F0F7D /* LaunchScreen.storyboard */,
-				11403FDB26D1181D006F0F7D /* Info.plist */,
+				11403FE526D1186D006F0F7D /* Models */,
+				11403FE326D1185A006F0F7D /* Stroyboards */,
+				11403FE226D11855006F0F7D /* Controllers */,
+				11403FE426D11860006F0F7D /* Services */,
+				11403FE126D11837006F0F7D /* Support files */,
 			);
 			path = MyPocket;
+			sourceTree = "<group>";
+		};
+		11403FE126D11837006F0F7D /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				11403FCD26D1181C006F0F7D /* AppDelegate.swift */,
+				11403FCF26D1181C006F0F7D /* SceneDelegate.swift */,
+				11403FD626D1181D006F0F7D /* Assets.xcassets */,
+				11403FDB26D1181D006F0F7D /* Info.plist */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		11403FE226D11855006F0F7D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11403FEA26D11A0B006F0F7D /* Bill */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11403FE326D1185A006F0F7D /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				11403FD326D1181C006F0F7D /* Main.storyboard */,
+				11403FD826D1181D006F0F7D /* LaunchScreen.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
+		11403FE426D11860006F0F7D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11403FE826D119E4006F0F7D /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		11403FE526D1186D006F0F7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11403FE626D118BF006F0F7D /* Bill.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11403FEA26D11A0B006F0F7D /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				11403FED26D11A43006F0F7D /* BillListTableViewController.swift */,
+				11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		D0EDE3107E5CBF5A94EB0BFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				852067E78632BBC5B094531A /* Pods-MyPocket.debug.xcconfig */,
+				13846948AA907508A231A3A5 /* Pods-MyPocket.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD7C6847E445225C6694DA0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11403FDE26D1181D006F0F7D /* Build configuration list for PBXNativeTarget "MyPocket" */;
 			buildPhases = (
+				E49EBE37B4F1C1188D0AC7EA /* [CP] Check Pods Manifest.lock */,
 				11403FC626D1181C006F0F7D /* Sources */,
 				11403FC726D1181C006F0F7D /* Frameworks */,
 				11403FC826D1181C006F0F7D /* Resources */,
+				26CADCFD71673C5EA25624EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +215,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26CADCFD71673C5EA25624EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPocket/Pods-MyPocket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyPocket/Pods-MyPocket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPocket/Pods-MyPocket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E49EBE37B4F1C1188D0AC7EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyPocket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11403FC626D1181C006F0F7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11403FD226D1181C006F0F7D /* ViewController.swift in Sources */,
 				11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */,
+				11403FE726D118BF006F0F7D /* Bill.swift in Sources */,
 				11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */,
+				11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */,
+				11403FEE26D11A43006F0F7D /* BillListTableViewController.swift in Sources */,
+				11403FEC26D11A27006F0F7D /* BillTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +411,13 @@
 		};
 		11403FDF26D1181D006F0F7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852067E78632BBC5B094531A /* Pods-MyPocket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CHP9M644H;
-				INFOPLIST_FILE = MyPocket/Info.plist;
+				INFOPLIST_FILE = "MyPocket/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +425,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaZakharchenko.MyPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		11403FE026D1181D006F0F7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13846948AA907508A231A3A5 /* Pods-MyPocket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CHP9M644H;
-				INFOPLIST_FILE = MyPocket/Info.plist;
+				INFOPLIST_FILE = "MyPocket/Support files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaZakharchenko.MyPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
