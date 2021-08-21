@@ -8,7 +8,10 @@
 import RealmSwift
 
 class Bill: Object {
-    @objc dynamic var billCategory = ""
     @objc dynamic var name = ""
+    @objc dynamic var type = ""
+    @objc dynamic var balance = 0
+    @objc dynamic var note = ""
+    @objc dynamic var currency = ""
     @objc dynamic var date = Date()
 }

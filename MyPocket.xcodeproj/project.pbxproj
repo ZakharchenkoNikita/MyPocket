@@ -16,6 +16,7 @@
 		11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FE826D119E4006F0F7D /* StorageManager.swift */; };
 		11403FEC26D11A27006F0F7D /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */; };
 		11403FEE26D11A43006F0F7D /* BillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FED26D11A43006F0F7D /* BillListTableViewController.swift */; };
+		11403FF226D13457006F0F7D /* NewBillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FF126D13457006F0F7D /* NewBillTableViewController.swift */; };
 		329AA2C1AEE0211583D029D0 /* Pods_MyPocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		11403FE826D119E4006F0F7D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 		11403FED26D11A43006F0F7D /* BillListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewController.swift; sourceTree = "<group>"; };
+		11403FF126D13457006F0F7D /* NewBillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillTableViewController.swift; sourceTree = "<group>"; };
 		13846948AA907508A231A3A5 /* Pods-MyPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.release.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.release.xcconfig"; sourceTree = "<group>"; };
 		73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852067E78632BBC5B094531A /* Pods-MyPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.debug.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				11403FED26D11A43006F0F7D /* BillListTableViewController.swift */,
 				11403FEB26D11A27006F0F7D /* BillTableViewCell.swift */,
+				11403FF126D13457006F0F7D /* NewBillTableViewController.swift */,
 			);
 			path = Bill;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */,
 				11403FE726D118BF006F0F7D /* Bill.swift in Sources */,
+				11403FF226D13457006F0F7D /* NewBillTableViewController.swift in Sources */,
 				11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */,
 				11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */,
 				11403FEE26D11A43006F0F7D /* BillListTableViewController.swift in Sources */,
