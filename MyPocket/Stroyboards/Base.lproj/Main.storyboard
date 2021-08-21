@@ -61,16 +61,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bills" id="2Cx-KU-U03">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3dp-d4-75b">
-                            <connections>
-                                <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="3dp-d4-75b">
+                                <connections>
+                                    <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="vNR-kt-2Hm"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-11-MW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-72"/>
+            <point key="canvasLocation" x="-98" y="-73"/>
         </scene>
         <!--New Bill-->
         <scene sceneID="4ob-Il-Sqi">

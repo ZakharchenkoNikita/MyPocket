@@ -26,12 +26,13 @@ class StorageManager {
         }
     }
     
-    func update(name: String) {
+    func update(name: String, note: String) {
         let bill = realm.objects(Bill.self)
         
         try! realm.write{
             bill.forEach { bill in
                 bill.name = name
+                bill.note = note
             }
         }
     }

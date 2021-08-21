@@ -32,11 +32,12 @@ class NewBillTableViewController: UITableViewController {
     // MARK: IB Actions
     @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {
         guard let nameTF = nameTextField.text, !nameTF.isEmpty else { return }
+        guard let noteTF = noteTextField.text, !noteTF.isEmpty else { return }
         
         switch identifier {
         case "currentBill":
             DispatchQueue.main.async {
-                StorageManager.shared.update(name: nameTF)
+                StorageManager.shared.update(name: nameTF, note: noteTF)
             }
             
             dismiss(animated: true) {
@@ -45,6 +46,7 @@ class NewBillTableViewController: UITableViewController {
         default:
             let newBill = Bill()
             newBill.name = nameTF
+            newBill.note = noteTF
             
             DispatchQueue.main.async {
                 StorageManager.shared.save(bill: newBill)
@@ -62,7 +64,6 @@ class NewBillTableViewController: UITableViewController {
     private func getInformation() {
         if identifier == "currentBill" {
             title = bill.name
-            
             nameTextField.text = bill.name
             return
         }

@@ -14,4 +14,12 @@ class Bill: Object {
     @objc dynamic var note = ""
     @objc dynamic var currency = ""
     @objc dynamic var date = Date()
+    
+    let transactions = List<Transaction>()
+}
+
+class Transaction: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var date = Date()
+    @objc dynamic var bill: Bill?
 }
