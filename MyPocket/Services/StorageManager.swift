@@ -25,4 +25,14 @@ class StorageManager {
             realm.delete(bill)
         }
     }
+    
+    func update(name: String) {
+        let bill = realm.objects(Bill.self)
+        
+        try! realm.write{
+            bill.forEach { bill in
+                bill.name = name
+            }
+        }
+    }
 }

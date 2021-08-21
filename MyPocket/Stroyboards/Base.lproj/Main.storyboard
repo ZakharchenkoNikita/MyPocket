@@ -51,6 +51,7 @@
                                 <connections>
                                     <outlet property="billImage" destination="hIo-f2-EZm" id="9Nk-yM-XJh"/>
                                     <outlet property="billNameLabel" destination="4mF-td-qDl" id="Q2J-DS-w1Z"/>
+                                    <segue destination="GIB-K2-ihP" kind="show" identifier="currentBill" id="dXK-3z-Z7L"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,14 +61,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bills" id="2Cx-KU-U03">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="add" id="3dp-d4-75b"/>
-                            <barButtonItem title="Item" id="a6d-sJ-VTA">
-                                <connections>
-                                    <segue destination="GIB-K2-ihP" kind="presentation" id="qnt-G6-DWW"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3dp-d4-75b">
+                            <connections>
+                                <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-11-MW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,7 +89,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-XU-575">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-XU-575">
                                                     <rect key="frame" x="10" y="0.0" width="278" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -136,7 +134,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFb-MO-Far">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFb-MO-Far">
                                                     <rect key="frame" x="10" y="0.0" width="278" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -164,8 +162,16 @@
                                 <segue destination="jQj-hV-NiL" kind="unwind" unwindAction="unwindSegue:" id="RFL-Tu-nlF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xvO-ow-lN1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xvO-ow-lN1">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="7tm-FP-cYQ" id="wDv-AO-q53"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="fAO-XU-575" id="EiD-8d-8Db"/>
+                        <outlet property="noteTextField" destination="qFb-MO-Far" id="A8a-1p-nPI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8D-py-7p7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jQj-hV-NiL" userLabel="Exit" sceneMemberID="exit"/>
@@ -176,6 +182,7 @@
         <scene sceneID="6Rv-aY-bkE">
             <objects>
                 <navigationController id="GIB-K2-ihP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="m2g-bg-B2B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxW-VP-R3R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -205,6 +212,9 @@
             <point key="canvasLocation" x="-853" y="-71"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bzc-7b-Ddw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemGrayColor">
