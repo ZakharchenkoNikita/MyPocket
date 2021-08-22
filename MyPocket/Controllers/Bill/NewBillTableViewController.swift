@@ -32,7 +32,7 @@ class NewBillTableViewController: UITableViewController {
     // MARK: IB Actions
     @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {
         guard let nameTF = nameTextField.text, !nameTF.isEmpty else { return }
-        guard let noteTF = noteTextField.text, !noteTF.isEmpty else { return }
+        guard let noteTF = noteTextField.text else { return }
         
         switch identifier {
         case "currentBill":
@@ -65,6 +65,7 @@ class NewBillTableViewController: UITableViewController {
         if identifier == "currentBill" {
             title = bill.name
             nameTextField.text = bill.name
+            noteTextField.text = bill.note
             return
         }
     }

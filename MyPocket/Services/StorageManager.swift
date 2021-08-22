@@ -12,7 +12,7 @@ class StorageManager {
     
     let realm = try! Realm()
     
-    private init() { }
+    private init() {}
     
     func save(bill: Bill) {
         try! realm.write {
