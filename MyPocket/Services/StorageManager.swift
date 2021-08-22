@@ -9,31 +9,41 @@ import RealmSwift
 
 class StorageManager {
     static let shared = StorageManager()
-    
+
     let realm = try! Realm()
     
     private init() {}
     
     func save(bill: Bill) {
-        try! realm.write {
-            realm.add(bill)
+        do {
+            try realm.write {
+                realm.add(bill)
+            }
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
     func delete(bill: Bill) {
-        try! realm.write{
-            realm.delete(bill)
+        do {
+            try realm.write{
+                realm.delete(bill)
+            }
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
-    func update(name: String, note: String) {
-        let bill = realm.objects(Bill.self)
-        
-        try! realm.write{
-            bill.forEach { bill in
-                bill.name = name
-                bill.note = note
+    func update(currentBill: Bill, name: String, note: String, balance: Double, type: String) {
+        do {
+            try realm.write{
+                currentBill.name = name
+                currentBill.note = note
+                currentBill.balance = balance
+                currentBill.type = type
             }
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
 }

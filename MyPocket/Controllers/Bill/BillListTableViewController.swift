@@ -7,11 +7,6 @@
 
 import RealmSwift
 
-enum BillCategory: String {
-    case bank = "Bank"
-    case wallet = "Wallet"
-}
-
 class BillListTableViewController: UITableViewController {
     
     // MARK: Private properties
@@ -96,8 +91,9 @@ extension BillListTableViewController {
 // MARK: NewBillTableViewControllerDelegate
 extension BillListTableViewController: NewBillTableViewControllerDelegate {
     func updateBill() {
-        let cellIndex = IndexPath(row: billList.count - 1, section: 0)
-        tableView.reloadRows(at: [cellIndex], with: .automatic)
+        tableView.beginUpdates()
+        tableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .automatic)
+        tableView.endUpdates()
     }
     
     func saveNewBill() {
