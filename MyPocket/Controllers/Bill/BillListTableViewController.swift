@@ -62,10 +62,17 @@ extension BillListTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "billsListCell", for: indexPath) as! BillTableViewCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "billsListCell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
         let billList = billList[indexPath.row]
-        cell.billNameLabel.text = billList.name
+        
+        content.image = UIImage(systemName: "wallet.pass.fill")
+        content.imageProperties.tintColor = .gray
+        content.text = billList.name
+        content.secondaryText = String(billList.balance)
+        content.secondaryTextProperties.color = .orange
+        
+        cell.contentConfiguration = content
         
         return cell
     }
