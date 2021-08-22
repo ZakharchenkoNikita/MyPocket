@@ -24,6 +24,16 @@ class StorageManager {
         }
     }
     
+    func save(transaction: Transaction) {
+        do {
+            try realm.write {
+                realm.add(transaction)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     func delete(bill: Bill) {
         do {
             try realm.write{

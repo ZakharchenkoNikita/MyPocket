@@ -65,6 +65,15 @@ class NewBillTableViewController: UITableViewController {
             newBill.type = billTypeCell.textLabel?.text ?? "Банк"
             newBill.balance = Double(balanceTF) ?? 0.0
             
+            let newTransaction = Transaction()
+            newTransaction.name = "Начальный баланс"
+            newTransaction.balance = Double(balanceTF) ?? 0.0
+            newTransaction.bill = newBill
+            
+            newBill.transactions.append(newTransaction)
+            
+            StorageManager.shared.save(transaction: newTransaction)
+            
             saveBill(newBill: newBill)
         }
     }
