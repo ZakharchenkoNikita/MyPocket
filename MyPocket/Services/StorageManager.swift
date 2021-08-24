@@ -14,46 +14,53 @@ class StorageManager {
     
     private init() {}
     
-    func save(bill: Bill) {
+    private func write(completion: () -> Void) {
         do {
             try realm.write {
-                realm.add(bill)
+                completion()
             }
         } catch let error {
             print(error.localizedDescription)
         }
     }
-    
-    func save(transaction: Transaction) {
-        do {
-            try realm.write {
-                realm.add(transaction)
-            }
-        } catch let error {
-            print(error.localizedDescription)
+}
+
+// MARK: - Work with bill
+extension StorageManager {
+    func save(bill: Bill) {
+        write {
+            realm.add(bill)
         }
     }
     
     func delete(bill: Bill) {
-        do {
-            try realm.write{
-                realm.delete(bill)
-            }
-        } catch let error {
-            print(error.localizedDescription)
+        write {
+            realm.delete(bill.transactions)
+            realm.delete(bill)
         }
     }
     
     func update(currentBill: Bill, name: String, note: String, balance: Double, type: String) {
-        do {
-            try realm.write{
-                currentBill.name = name
-                currentBill.note = note
-                currentBill.balance = balance
-                currentBill.type = type
-            }
-        } catch let error {
-            print(error.localizedDescription)
+        write {
+            currentBill.name = name
+            currentBill.note = note
+            currentBill.balance = balance
+            currentBill.type = type
+        }
+    }
+}
+
+// MARK: - Work with transactions
+extension StorageManager {
+    func save(transaction: Transaction) {
+        write {
+            realm.add(transaction)
+        }
+    }
+    
+    func add(with bill: Bill, and transaction: Transaction) {
+        write {
+            bill.transactions.append(transaction)
         }
     }
 }

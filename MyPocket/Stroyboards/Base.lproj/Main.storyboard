@@ -3,13 +3,14 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Bills-->
         <scene sceneID="BFX-NK-Gjf">
             <objects>
-                <tableViewController id="NBZ-Ca-pKA" customClass="BillListTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NBZ-Ca-pKA" customClass="BillTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ull-QH-7eX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +40,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="GIB-K2-ihP" kind="show" identifier="currentBill" id="dXK-3z-Z7L"/>
+                                    <segue destination="stK-0s-NK9" kind="show" id="gtL-z2-a5S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,14 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bills" id="2Cx-KU-U03">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="3dp-d4-75b">
-                                <connections>
-                                    <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="organize" id="vNR-kt-2Hm"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3dp-d4-75b">
+                            <connections>
+                                <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-11-MW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,7 +187,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8D-py-7p7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jQj-hV-NiL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1372.5" y="-72.887323943661968"/>
+            <point key="canvasLocation" x="628" y="-773"/>
         </scene>
         <!--Bill Type Table View Controller-->
         <scene sceneID="it7-Yh-iBf">
@@ -217,12 +215,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBe-Qg-nB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2109" y="-72"/>
+            <point key="canvasLocation" x="1316" y="-773"/>
+        </scene>
+        <!--Transaction Table View Controller-->
+        <scene sceneID="CI2-Zv-ckg">
+            <objects>
+                <tableViewController id="stK-0s-NK9" customClass="TransactionTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xmF-bC-6jY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="transactionCell" id="kiD-Ub-0rF">
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kiD-Ub-0rF" id="KjT-fU-NAy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="stK-0s-NK9" id="3Uj-lh-43F"/>
+                            <outlet property="delegate" destination="stK-0s-NK9" id="929-HO-Qs2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rup-L9-zqn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTw-9K-xn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="-74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Rv-aY-bkE">
             <objects>
-                <navigationController id="GIB-K2-ihP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationVC" id="GIB-K2-ihP" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="m2g-bg-B2B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxW-VP-R3R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
@@ -234,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PD6-0e-Ms8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="-72"/>
+            <point key="canvasLocation" x="-99" y="-773"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ybk-eQ-61s">
@@ -253,7 +280,9 @@
             <point key="canvasLocation" x="-853" y="-71"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Bzc-7b-Ddw"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

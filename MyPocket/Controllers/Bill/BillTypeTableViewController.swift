@@ -8,38 +8,39 @@
 import UIKit
 
 class BillTypeTableViewController: UITableViewController {
-
+    
+    // MARK: Properties
     var delegate: BillTypeTableViewControllerDelegate!
+    var billType: String!
     
-    private let billType = BillCategory.allCases
+    // MARK: Private properties
+    private let billsType = BillType.allCases
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        billType.count
+        billsType.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billType", for: indexPath)
+        
         var content = cell.defaultContentConfiguration()
+        let bill = billsType[indexPath.row]
         
         content.image = UIImage(systemName: "wallet.pass.fill")
         content.imageProperties.tintColor = .gray
-        
-        let bill = billType[indexPath.row]
         content.text = bill.rawValue
-
+        cell.accessoryType = billType == bill.rawValue ? .checkmark : .none
+        
         cell.contentConfiguration = content
-
+        
         return cell
     }
     
+    // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate.getBillType(type: billType[indexPath.row].rawValue)
+        delegate.getBillType(type: billsType[indexPath.row].rawValue)
         navigationController?.popViewController(animated: true)
     }
 }

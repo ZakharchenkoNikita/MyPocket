@@ -35,15 +35,33 @@ class NewBillTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let billTypeVC = segue.destination as? BillTypeTableViewController else { return }
+        billTypeVC.billType = billTypeCell.textLabel?.text
         billTypeVC.delegate = self
     }
     
     // MARK: IB Actions
     @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {
+        save()
+    }
+}
+
+// MARK: BillTypeTableViewControllerDelegate
+extension NewBillTableViewController: BillTypeTableViewControllerDelegate {
+    func getBillType(type: String) {
+        billTypeCell.textLabel?.text = type
+        tableView.reloadData()
+    }
+}
+
+// MARK: Private methods
+extension NewBillTableViewController {
+    private func save() {
         guard let nameTF = nameTextField.text, !nameTF.isEmpty else { return }
         guard let noteTF = noteTextField.text else { return }
         guard let balanceTF = balanceTextField.text else { return }
         guard let type = billTypeCell.textLabel?.text else { return }
+        
+        let newTransaction = Transaction(value: ["Balance adjustment", Double(balanceTF) ?? 0.0])
         
         switch identifier {
         case "currentBill":
@@ -54,62 +72,61 @@ class NewBillTableViewController: UITableViewController {
                                              balance: Double(balanceTF) ?? 0.0,
                                              type: type)
             }
-            
+            addTransaction(newTransaction: newTransaction)
             dismiss(animated: true) {
                 self.delegate.updateBill()
             }
         default:
-            let newBill = Bill()
-            newBill.name = nameTF
-            newBill.note = noteTF
-            newBill.type = billTypeCell.textLabel?.text ?? "Банк"
-            newBill.balance = Double(balanceTF) ?? 0.0
-            
-            let newTransaction = Transaction()
-            newTransaction.name = "Начальный баланс"
-            newTransaction.balance = Double(balanceTF) ?? 0.0
-            newTransaction.bill = newBill
+            let newBill = Bill(value:
+                                [
+                                    nameTF,
+                                    billTypeCell.textLabel?.text ?? "Bank",
+                                    Double(balanceTF) ?? 0.0, noteTF
+                                ]
+            )
             
             newBill.transactions.append(newTransaction)
             
-            StorageManager.shared.save(transaction: newTransaction)
-            
+            saveTransaction(newTransaction: newTransaction)
             saveBill(newBill: newBill)
         }
     }
     
-    // MARK: Private methods
     private func saveBill(newBill: Bill) {
         DispatchQueue.main.async {
             StorageManager.shared.save(bill: newBill)
         }
-        
         dismiss(animated: true) {
             self.delegate.saveNewBill()
         }
     }
     
+    private func saveTransaction(newTransaction: Transaction) {
+        DispatchQueue.main.async {
+            StorageManager.shared.save(transaction: newTransaction)
+        }
+    }
+    
+    private func addTransaction(newTransaction: Transaction) {
+        DispatchQueue.main.async {
+            StorageManager.shared.add(with: self.bill, and: newTransaction)
+        }
+    }
+    
     private func setupTableView() {
-        billBalanceCell.textLabel?.text = "Баланс"
+        billBalanceCell.textLabel?.text = "Balance"
         
-        if identifier == "currentBill" {
+        switch identifier {
+        case "currentBill":
             title = bill.name
             nameTextField.text = bill.name
             noteTextField.text = bill.note
             
             billTypeCell.textLabel?.text = bill.type
             balanceTextField.text = String(bill.balance)
-        } else {
-            nameTextField.text = BillCategory.bank.rawValue
-            billTypeCell.textLabel?.text = BillCategory.bank.rawValue
+        default:
+            nameTextField.text = BillType.bank.rawValue
+            billTypeCell.textLabel?.text = BillType.bank.rawValue
         }
-    }
-}
-
-// MARK: BillTypeTableViewControllerDelegate
-extension NewBillTableViewController: BillTypeTableViewControllerDelegate {
-    func getBillType(type: String) {
-        billTypeCell.textLabel?.text = type
-        tableView.reloadData()
     }
 }
