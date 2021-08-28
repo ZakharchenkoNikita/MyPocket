@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" title="Bills" id="2Cx-KU-U03">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3dp-d4-75b">
                             <connections>
-                                <segue destination="GIB-K2-ihP" kind="presentation" identifier="newBill" id="Bzc-7b-Ddw"/>
+                                <action selector="newBillButtonPressed:" destination="NBZ-Ca-pKA" id="epG-jF-Caz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,7 +66,7 @@
             <objects>
                 <tableViewController id="7tm-FP-cYQ" customClass="NewBillTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6zy-q9-R3p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection id="G7R-e9-4dB">
@@ -187,14 +187,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8D-py-7p7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jQj-hV-NiL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="628" y="-773"/>
+            <point key="canvasLocation" x="594" y="-773"/>
         </scene>
         <!--Bill Type Table View Controller-->
         <scene sceneID="it7-Yh-iBf">
             <objects>
                 <tableViewController id="4lT-Ej-tce" customClass="BillTypeTableViewController" customModule="MyPocket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fcM-BS-Vl0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billType" id="lGH-uw-gvs">
@@ -215,7 +215,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBe-Qg-nB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-773"/>
+            <point key="canvasLocation" x="1273" y="-773"/>
         </scene>
         <!--Transaction Table View Controller-->
         <scene sceneID="CI2-Zv-ckg">
@@ -252,7 +252,7 @@
                 <navigationController storyboardIdentifier="navigationVC" id="GIB-K2-ihP" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="m2g-bg-B2B"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxW-VP-R3R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

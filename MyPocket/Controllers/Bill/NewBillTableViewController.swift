@@ -94,7 +94,7 @@ extension NewBillTableViewController {
     
     private func saveBill(newBill: Bill) {
         DispatchQueue.main.async {
-            StorageManager.shared.save(bill: newBill)
+            StorageManager.shared.saveObject(object: newBill)
         }
         dismiss(animated: true) {
             self.delegate.saveNewBill()
@@ -103,7 +103,7 @@ extension NewBillTableViewController {
     
     private func saveTransaction(newTransaction: Transaction) {
         DispatchQueue.main.async {
-            StorageManager.shared.save(transaction: newTransaction)
+            StorageManager.shared.saveObject(object: newTransaction)
         }
     }
     

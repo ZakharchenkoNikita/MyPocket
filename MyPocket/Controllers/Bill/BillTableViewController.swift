@@ -12,41 +12,48 @@ class BillTableViewController: UITableViewController {
     // MARK: Private properties
     private var billList: Results<Bill>!
     
-    // MARK: Override methods
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         billList = StorageManager.shared.realm.objects(Bill.self) // нужен для того, чтобы заполнить из бд.
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let transactionVC = segue.destination as? TransactionTableViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         transactionVC.bill = billList[indexPath.row]
-        
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let identifier = segue.identifier else { return }
-        
-        navigationVC.viewControllers.forEach { viewController in
-            if identifier == "newBill" {
-                guard let newBillTableVC = viewController as? NewBillTableViewController else { return }
-                newBillTableVC.delegate = self
-                newBillTableVC.identifier = identifier
-                return
-            }
-        }
     }
     
     // MARK: IB Action
     @IBAction func unwindSegue(_ unwindSegue: UIStoryboardSegue) {
     }
     
-    // MARK: Private methods
+    @IBAction func newBillButtonPressed(_ sender: UIBarButtonItem) {
+        presentNewBillTableViewController(storyboardName: "Main", storyboardIdentifier: "navigationVC", identifier: "newBill")
+    }
+}
+
+// MARK: Private methods
+extension BillTableViewController {
     private func deleteBill(currentBill: Bill, indexPath: IndexPath) {
         StorageManager.shared.delete(bill: currentBill)
         
         let cellIndex = IndexPath(row: indexPath.row, section: 0)
         tableView.deleteRows(at: [cellIndex], with: .automatic)
+    }
+    
+    private func presentNewBillTableViewController(storyboardName: String, storyboardIdentifier: String, identifier: String, currentBill: Bill? = nil) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        guard let navigationVC = storyboard.instantiateViewController(identifier: storyboardIdentifier) as? UINavigationController else { return }
+        guard let newBillTableVC = navigationVC.topViewController as? NewBillTableViewController else { return }
+        
+        newBillTableVC.delegate = self
+        newBillTableVC.identifier = identifier
+        newBillTableVC.bill = currentBill
+
+        present(navigationVC, animated: true, completion: nil)
     }
 }
 
@@ -91,19 +98,11 @@ extension BillTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let navigationVC = storyboard.instantiateViewController(identifier: "navigationVC") as? UINavigationController else { return }
-        guard let newBillTableVC = navigationVC.topViewController as? NewBillTableViewController else { return }
-    
-        let identifier = "currentBill"
         let currentBill = billList[indexPath.row]
-        
-        newBillTableVC.delegate = self
-        newBillTableVC.identifier = identifier
-        newBillTableVC.bill = currentBill
-
-        present(navigationVC, animated: true, completion: nil)
+        presentNewBillTableViewController(storyboardName: "Main",
+                                          storyboardIdentifier: "navigationVC",
+                                          identifier: "currentBill",
+                                          currentBill: currentBill)
     }
 }
 
