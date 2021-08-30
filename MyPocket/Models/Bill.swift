@@ -18,12 +18,6 @@ class Bill: Object {
     let transactions = List<Transaction>()
 }
 
-class Transaction: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var balance = 0.0
-    @objc dynamic var date = Date()
-}
-
 enum BillType: String, CaseIterable {
     case bank = "Bank"
     case wallet = "Wallet"
