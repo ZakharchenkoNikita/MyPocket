@@ -60,9 +60,7 @@ extension NewBillTableViewController {
         guard let noteTF = noteTextField.text else { return }
         guard let balanceTF = balanceTextField.text else { return }
         guard let type = billTypeCell.textLabel?.text else { return }
-        
-        let newTransaction = Transaction(value: ["Balance adjustment", Double(balanceTF) ?? 0.0])
-        
+    
         switch identifier {
         case "currentBill":
             DispatchQueue.main.async {
@@ -72,11 +70,12 @@ extension NewBillTableViewController {
                                              balance: Double(balanceTF) ?? 0.0,
                                              type: type)
             }
-            addTransaction(newTransaction: newTransaction)
             dismiss(animated: true) {
                 self.delegate.updateBill()
             }
         default:
+            let newTransaction = Transaction(value: ["Balance adjustment", Double(balanceTF) ?? 0.0])
+            
             let newBill = Bill(value:
                                 [
                                     nameTF,
@@ -124,6 +123,7 @@ extension NewBillTableViewController {
             
             billTypeCell.textLabel?.text = bill.type
             balanceTextField.text = String(bill.balance)
+            balanceTextField.isEnabled = false
         default:
             nameTextField.text = BillType.bank.rawValue
             billTypeCell.textLabel?.text = BillType.bank.rawValue

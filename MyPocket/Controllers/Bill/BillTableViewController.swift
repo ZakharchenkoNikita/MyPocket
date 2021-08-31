@@ -15,7 +15,7 @@ class BillTableViewController: UITableViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        billList = StorageManager.shared.realm.objects(Bill.self) // нужен для того, чтобы заполнить из бд.
+        billList = StorageManager.shared.realm.objects(Bill.self)
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
@@ -68,8 +68,7 @@ extension BillTableViewController {
         var content = cell.defaultContentConfiguration()
         let billList = billList[indexPath.row]
         
-        content.image = UIImage(systemName: "wallet.pass.fill")
-        content.imageProperties.tintColor = .gray
+        content.image = UIImage(named: billList.type)
         content.text = billList.name
         content.secondaryText = String(billList.balance)
         content.secondaryTextProperties.color = .orange

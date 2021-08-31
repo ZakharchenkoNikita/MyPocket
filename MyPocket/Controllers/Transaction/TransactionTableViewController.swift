@@ -15,7 +15,7 @@ class TransactionTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transactions = StorageManager.shared.realm.objects(Transaction.self)
+        transactions = bill?.transactions.sorted(byKeyPath: "date", ascending: false)
         title = bill?.name
     }
 }
@@ -23,7 +23,7 @@ class TransactionTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension TransactionTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        transactions.count
+        bill?.transactions.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

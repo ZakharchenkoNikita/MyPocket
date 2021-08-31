@@ -27,11 +27,10 @@ class BillTypeTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let bill = billsType[indexPath.row]
         
-        content.image = UIImage(systemName: "wallet.pass.fill")
-        content.imageProperties.tintColor = .gray
+        content.image = UIImage(named: bill.rawValue)
         content.text = bill.rawValue
-        cell.accessoryType = billType == bill.rawValue ? .checkmark : .none
         
+        cell.accessoryType = billType == bill.rawValue ? .checkmark : .none
         cell.contentConfiguration = content
         
         return cell
