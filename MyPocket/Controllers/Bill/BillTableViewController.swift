@@ -16,7 +16,6 @@ class BillTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         billList = StorageManager.shared.realm.objects(Bill.self)
-        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     // MARK: Navigation
@@ -61,6 +60,10 @@ extension BillTableViewController {
 extension BillTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         billList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "test"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111BC5EE26DF9AD200F283EB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */; };
 		11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCD26D1181C006F0F7D /* AppDelegate.swift */; };
 		11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCF26D1181C006F0F7D /* SceneDelegate.swift */; };
 		11403FD526D1181C006F0F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD326D1181C006F0F7D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		11403FCA26D1181C006F0F7D /* MyPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11403FCD26D1181C006F0F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11403FCF26D1181C006F0F7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				11FA1BA226D55364004599DE /* Transaction */,
 				11403FEA26D11A0B006F0F7D /* Bill */,
+				111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				11403FFB26D276B3006F0F7D /* BillTypeTableViewController.swift in Sources */,
 				11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */,
 				11403FE726D118BF006F0F7D /* Bill.swift in Sources */,
+				111BC5EE26DF9AD200F283EB /* TabBarViewController.swift in Sources */,
 				11403FFF26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift in Sources */,
 				11FA1BA426D55394004599DE /* TransactionTableViewController.swift in Sources */,
 				11403FF526D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift in Sources */,
