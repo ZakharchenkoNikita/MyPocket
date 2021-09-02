@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		111BC5EE26DF9AD200F283EB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */; };
+		111BC5F126E0CCDF00F283EB /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BC5EF26E0CCDF00F283EB /* BillTableViewController.swift */; };
+		111BC5F226E0CCDF00F283EB /* BillTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111BC5F026E0CCDF00F283EB /* BillTableViewController.xib */; };
+		111BC5FA26E0EB9200F283EB /* NewBillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BC5F926E0EB9200F283EB /* NewBillTableViewController.swift */; };
 		11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCD26D1181C006F0F7D /* AppDelegate.swift */; };
 		11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FCF26D1181C006F0F7D /* SceneDelegate.swift */; };
 		11403FD526D1181C006F0F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD326D1181C006F0F7D /* Main.storyboard */; };
@@ -15,18 +17,15 @@
 		11403FDA26D1181D006F0F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11403FD826D1181D006F0F7D /* LaunchScreen.storyboard */; };
 		11403FE726D118BF006F0F7D /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FE626D118BF006F0F7D /* Bill.swift */; };
 		11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FE826D119E4006F0F7D /* StorageManager.swift */; };
-		11403FEE26D11A43006F0F7D /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FED26D11A43006F0F7D /* BillTableViewController.swift */; };
-		11403FF226D13457006F0F7D /* NewBillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FF126D13457006F0F7D /* NewBillTableViewController.swift */; };
 		11403FF526D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FF426D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift */; };
-		11403FFB26D276B3006F0F7D /* BillTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FFA26D276B3006F0F7D /* BillTypeTableViewController.swift */; };
-		11403FFF26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11403FFE26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift */; };
 		11A1AB7726DD118700AC08A8 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A1AB7626DD118700AC08A8 /* Transaction.swift */; };
-		11FA1BA426D55394004599DE /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FA1BA326D55394004599DE /* TransactionTableViewController.swift */; };
 		329AA2C1AEE0211583D029D0 /* Pods_MyPocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		111BC5EF26E0CCDF00F283EB /* BillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewController.swift; sourceTree = "<group>"; };
+		111BC5F026E0CCDF00F283EB /* BillTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillTableViewController.xib; sourceTree = "<group>"; };
+		111BC5F926E0EB9200F283EB /* NewBillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillTableViewController.swift; sourceTree = "<group>"; };
 		11403FCA26D1181C006F0F7D /* MyPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11403FCD26D1181C006F0F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11403FCF26D1181C006F0F7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,13 +35,8 @@
 		11403FDB26D1181D006F0F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11403FE626D118BF006F0F7D /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		11403FE826D119E4006F0F7D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		11403FED26D11A43006F0F7D /* BillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewController.swift; sourceTree = "<group>"; };
-		11403FF126D13457006F0F7D /* NewBillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillTableViewController.swift; sourceTree = "<group>"; };
 		11403FF426D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillTableViewControllerDelegate.swift; sourceTree = "<group>"; };
-		11403FFA26D276B3006F0F7D /* BillTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTypeTableViewController.swift; sourceTree = "<group>"; };
-		11403FFE26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTypeTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 		11A1AB7626DD118700AC08A8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		11FA1BA326D55394004599DE /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 		13846948AA907508A231A3A5 /* Pods-MyPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.release.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.release.xcconfig"; sourceTree = "<group>"; };
 		73B83D373D342E137F0DD81A /* Pods_MyPocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852067E78632BBC5B094531A /* Pods-MyPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPocket.debug.xcconfig"; path = "Target Support Files/Pods-MyPocket/Pods-MyPocket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111BC5F326E0CCE700F283EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				111BC5F426E0CCED00F283EB /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		111BC5F426E0CCED00F283EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				111BC5F026E0CCDF00F283EB /* BillTableViewController.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		11403FC126D1181C006F0F7D = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				11403FE526D1186D006F0F7D /* Models */,
-				11403FE326D1185A006F0F7D /* Stroyboards */,
+				111BC5F326E0CCE700F283EB /* Views */,
 				11403FE226D11855006F0F7D /* Controllers */,
+				11403FE326D1185A006F0F7D /* Stroyboards */,
 				11403FE426D11860006F0F7D /* Services */,
 				11403FF326D14D5E006F0F7D /* Protocols */,
 				11403FE126D11837006F0F7D /* Support files */,
@@ -107,7 +118,6 @@
 			children = (
 				11FA1BA226D55364004599DE /* Transaction */,
 				11403FEA26D11A0B006F0F7D /* Bill */,
-				111BC5ED26DF9AD200F283EB /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,9 +151,8 @@
 		11403FEA26D11A0B006F0F7D /* Bill */ = {
 			isa = PBXGroup;
 			children = (
-				11403FED26D11A43006F0F7D /* BillTableViewController.swift */,
-				11403FF126D13457006F0F7D /* NewBillTableViewController.swift */,
-				11403FFA26D276B3006F0F7D /* BillTypeTableViewController.swift */,
+				111BC5EF26E0CCDF00F283EB /* BillTableViewController.swift */,
+				111BC5F926E0EB9200F283EB /* NewBillTableViewController.swift */,
 			);
 			path = Bill;
 			sourceTree = "<group>";
@@ -152,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				11403FF426D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift */,
-				11403FFE26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -160,7 +168,6 @@
 		11FA1BA226D55364004599DE /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				11FA1BA326D55394004599DE /* TransactionTableViewController.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 			files = (
 				11403FDA26D1181D006F0F7D /* LaunchScreen.storyboard in Resources */,
 				11403FD726D1181D006F0F7D /* Assets.xcassets in Resources */,
+				111BC5F226E0CCDF00F283EB /* BillTableViewController.xib in Resources */,
 				11403FD526D1181C006F0F7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,17 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A1AB7726DD118700AC08A8 /* Transaction.swift in Sources */,
-				11403FFB26D276B3006F0F7D /* BillTypeTableViewController.swift in Sources */,
+				111BC5FA26E0EB9200F283EB /* NewBillTableViewController.swift in Sources */,
 				11403FCE26D1181C006F0F7D /* AppDelegate.swift in Sources */,
 				11403FE726D118BF006F0F7D /* Bill.swift in Sources */,
-				111BC5EE26DF9AD200F283EB /* TabBarViewController.swift in Sources */,
-				11403FFF26D2ECC2006F0F7D /* BillTypeTableViewControllerDelegate.swift in Sources */,
-				11FA1BA426D55394004599DE /* TransactionTableViewController.swift in Sources */,
 				11403FF526D14D75006F0F7D /* NewBillTableViewControllerDelegate.swift in Sources */,
-				11403FF226D13457006F0F7D /* NewBillTableViewController.swift in Sources */,
 				11403FD026D1181C006F0F7D /* SceneDelegate.swift in Sources */,
+				111BC5F126E0CCDF00F283EB /* BillTableViewController.swift in Sources */,
 				11403FE926D119E4006F0F7D /* StorageManager.swift in Sources */,
-				11403FEE26D11A43006F0F7D /* BillTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

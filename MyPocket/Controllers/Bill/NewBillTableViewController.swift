@@ -2,131 +2,63 @@
 //  NewBillTableViewController.swift
 //  MyPocket
 //
-//  Created by Nikita on 21.08.21.
+//  Created by Nikita on 02.09.21.
 //
 
 import UIKit
 
 class NewBillTableViewController: UITableViewController {
-    
-    // MARK: IB Outlets
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var noteTextField: UITextField!
-    
-    @IBOutlet weak var billTypeCell: UITableViewCell!
-    @IBOutlet weak var billBalanceCell: UITableViewCell!
-    
+
     @IBOutlet weak var balanceTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     var delegate: NewBillTableViewControllerDelegate!
-    var bill: Bill!
-    var identifier: String!
-    
-    // MARK: Override methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-    }
 
-    // MARK: Table view data source
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let billTypeVC = segue.destination as? BillTypeTableViewController else { return }
-        billTypeVC.billType = billTypeCell.textLabel?.text
-        billTypeVC.delegate = self
     }
     
-    // MARK: IB Actions
-    @IBAction func saveBarButtonPressed(_ sender: UIBarButtonItem) {
-        save()
-    }
-}
-
-// MARK: BillTypeTableViewControllerDelegate
-extension NewBillTableViewController: BillTypeTableViewControllerDelegate {
-    func getBillType(type: String) {
-        billTypeCell.textLabel?.text = type
-        tableView.reloadData()
-    }
-}
-
-// MARK: Private methods
-extension NewBillTableViewController {
-    private func save() {
-        guard let nameTF = nameTextField.text, !nameTF.isEmpty else { return }
-        guard let noteTF = noteTextField.text else { return }
-        guard let balanceTF = balanceTextField.text else { return }
-        guard let type = billTypeCell.textLabel?.text else { return }
-    
-        switch identifier {
-        case "currentBill":
-            DispatchQueue.main.async {
-                StorageManager.shared.update(currentBill: self.bill,
-                                             name: nameTF,
-                                             note: noteTF,
-                                             balance: Double(balanceTF) ?? 0.0,
-                                             type: type)
-            }
-            dismiss(animated: true) {
-                self.delegate.updateBill()
-            }
-        default:
-            let newTransaction = Transaction(value: ["Balance adjustment", Double(balanceTF) ?? 0.0])
-            
-            let newBill = Bill(value:
-                                [
-                                    nameTF,
-                                    billTypeCell.textLabel?.text ?? "Bank",
-                                    Double(balanceTF) ?? 0.0, noteTF
-                                ]
-            )
-            
-            newBill.transactions.append(newTransaction)
-            
-            saveTransaction(newTransaction: newTransaction)
-            saveBill(newBill: newBill)
-        }
+    @IBAction func saveButtonPressed() {
+        saveBill()
     }
     
-    private func saveBill(newBill: Bill) {
-        DispatchQueue.main.async {
-            StorageManager.shared.saveObject(object: newBill)
-        }
-        dismiss(animated: true) {
-            self.delegate.saveNewBill()
-        }
-    }
-    
-    private func saveTransaction(newTransaction: Transaction) {
-        DispatchQueue.main.async {
-            StorageManager.shared.saveObject(object: newTransaction)
-        }
-    }
-    
-    private func addTransaction(newTransaction: Transaction) {
-        DispatchQueue.main.async {
-            StorageManager.shared.add(with: self.bill, and: newTransaction)
-        }
-    }
-    
-    private func setupTableView() {
-        billBalanceCell.textLabel?.text = "Balance"
+    private func saveBill() {
+        guard let name = nameTextField.text else { return }
+        guard let balance = balanceTextField.text else { return }
         
-        switch identifier {
-        case "currentBill":
-            title = bill.name
-            nameTextField.text = bill.name
-            noteTextField.text = bill.note
-            
-            billTypeCell.textLabel?.text = bill.type
-            balanceTextField.text = String(bill.balance)
-            balanceTextField.isEnabled = false
-        default:
-            nameTextField.text = BillType.bank.rawValue
-            billTypeCell.textLabel?.text = BillType.bank.rawValue
+        guard !balance.isEmpty || !name.isEmpty else {
+            callErrorAlert(message: "Name is required. Initial balance is required.")
+            return
         }
+        
+        guard !name.isEmpty else {
+            callErrorAlert(message: "Name is required.")
+            return
+        }
+        guard !balance.isEmpty else {
+            callErrorAlert(message: "An initial balance is required.")
+            return
+        }
+        
+        let newBill = Bill()
+        newBill.name = name
+        newBill.balance = Double(balance) ?? 0.00
+        
+        StorageManager.shared.saveObject(object: newBill)
+        dismiss(animated: true) { [unowned self] in
+            self.delegate.updateTableView()
+        }
+    }
+    
+    private func callErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Upps", message: message, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Сontinue", style: .destructive, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }

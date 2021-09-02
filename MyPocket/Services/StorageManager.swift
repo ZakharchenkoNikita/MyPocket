@@ -20,6 +20,12 @@ class StorageManager {
         }
     }
     
+    func deleteObject<O: Object>(object: O) {
+        write {
+            realm.delete(object)
+        }
+    }
+    
     private func write(completion: () -> Void) {
         do {
             try realm.write {
@@ -33,28 +39,9 @@ class StorageManager {
 
 // MARK: - Work with bill
 extension StorageManager {
-    func delete(bill: Bill) {
-        write {
-            realm.delete(bill.transactions)
-            realm.delete(bill)
-        }
-    }
     
-    func update(currentBill: Bill, name: String, note: String, balance: Double, type: String) {
-        write {
-            currentBill.name = name
-            currentBill.note = note
-            currentBill.balance = balance
-            currentBill.type = type
-        }
-    }
 }
 
 // MARK: - Work with transactions
 extension StorageManager {
-    func add(with bill: Bill, and transaction: Transaction) {
-        write {
-            bill.transactions.append(transaction)
-        }
-    }
 }

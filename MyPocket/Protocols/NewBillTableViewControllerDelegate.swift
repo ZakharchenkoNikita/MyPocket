@@ -8,6 +8,5 @@
 import Foundation
 
 protocol NewBillTableViewControllerDelegate {
-    func saveNewBill()
-    func updateBill()
+    func updateTableView()
 }

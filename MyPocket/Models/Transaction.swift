@@ -9,6 +9,6 @@ import RealmSwift
 
 class Transaction: Object {
     @objc dynamic var name = ""
-    @objc dynamic var balance = 0.0
+    @objc dynamic var balance = 0.00
     @objc dynamic var date = Date()
 }
